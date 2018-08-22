@@ -4,9 +4,8 @@ pipeline {
         stage('compile stage') {
 
             steps {
-              withMaven (maven: 'M3')
-               sh 'echo "path: ${PATH}"'
-                
+              withMaven ('maven: "M3"')
+               sh 'mvn clean compile'                
           
             }
         }
