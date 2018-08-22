@@ -1,16 +1,16 @@
 pipeline {
-    agent none
+    agent any
     stages {
         stage('compile stage') {
 
             steps {
-              maven 'Maven 3.5.0'
+              withMaven (maven: 'M3')
                 sh 'mvn clean compile'
             }
         }
         stage('Test stage') {
             steps {
-                 maven 'Maven 3.5.0'
+               withMaven (maven: 'M3')
                 sh 'mvn test'
             }
         }
