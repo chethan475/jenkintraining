@@ -5,7 +5,9 @@ pipeline {
 
             steps {
               withMaven (maven: 'M3')
+                echo 'tst'
                 sh 'mvn clean install'
+                echo 'tst1'
             }
         }
         stage('Test stage') {
